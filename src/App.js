@@ -7,7 +7,7 @@ class App extends Component{
 
     render(){
         return(
-            <div>Assalam o Alaikum</div>
+            <div>Assalam o Alaikum, hi</div>
         )
     }
 }
