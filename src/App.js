@@ -5,11 +5,7 @@ class App extends Component{
 
     }
 
-    render(){
-        return(
-            <div>Assalam o Alaikum, Testing committ is working or not</div>
-        )
-    }
+    render(){ }
 }
 
 export default App;
