@@ -18,18 +18,40 @@ class Counter extends Component {
     render() { 
       
     return (
-          <div>
+          <div className="row">
+            
+            <div className="col-1">
+              <span 
+              style={this.styles} 
+              className={this.getBachClasses()}>
               
-              <span style={this.styles} className={this.getBachClasses()}>{this.formatCount()}
-              </span>                  
-              <button onClick={()=>this.props.onIncrement(this.props.counter)} className="btn btn-secondary btn-sm">
-                increment
+              {this.formatCount()}
+              
+              </span>    
+            </div>
+            
+            <div className="col">  
+              <button 
+              onClick={()=>this.props.onIncrement(this.props.counter)} 
+              className="btn btn-secondary btn-sm m-2  ">
+               +
               </button>
-              <button  onClick={()=> (this.props.onDelete(this.props.id))}   
-                       className="btn btn-danger btn-sm m-2">
-                Delete
+              
+              <button 
+              onClick={()=> this.props.onDecrement(this.props.counter)} 
+              className="btn btn-secondary btn-sm m-2">
+                -
               </button>
-              {/* <ul>{this.state.tags.map(tag => <li key={tag}>{tag}</li>)}</ul> */}
+              <button  
+              onClick={()=> (this.props.onDelete(this.props.id))}   
+              className="btn btn-danger btn-sm m-2  ">
+                X
+              </button>
+            </div>
+              
+                            
+            
+              
          </div>                                                                                        
          //badge and badge-primary are bootstrat classes        
          //if only one attribute is to be style we can use inline css e.g inside span 
@@ -38,7 +60,7 @@ class Counter extends Component {
   
 
     getBachClasses() {
-        let classes = "badge  m-2 ";
+        let classes = "badge  m-2 btn-sm ";
         classes += this.props.value   === 0 ? "badge-warning" : "badge-primary";
         return classes;
     }

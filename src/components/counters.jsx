@@ -15,6 +15,7 @@ class Counters extends Component {
       onIncrement={this.props.onIncrement}
       value={counter.value}
       id={counter.id} 
+      onDecrement={this.props.onDecrement}
       >
        
       </Counter>)}
